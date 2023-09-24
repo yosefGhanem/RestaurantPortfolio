@@ -1,38 +1,149 @@
-.App {
+/* Adding css grids */
+.container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "header" "main" "nav" "footer";
+}
+
+
+@media (min-width: 400) {
+  .container {
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "header header header header" "main main main main" "nav nav nav nav" "footer footer footer footer";
+  }
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  /* Adjusting the header */
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 25px;
+}
+.header {
+  display: flex;
+  grid-area: header;
+  flex-direction: row; /* Stack the logo and menu items horizontally */
+  align-items: center; /* Center the content horizontally */
+  justify-content: center; /* Center the content vertically */
+  padding: 10px;
+  background-color: #EDEFEE;
+  color: black;
+}
+
+.header img {
+  margin-right: 25px; /* Adjust the margin as needed */
+}
+
+.main {
+  grid-area: main;
+  padding: 25px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer {
+
+  grid-area: footer;
+  padding: 10px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Styling the main part */
+.main-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Stack the image and text side by side */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: end; /* Add space between image and text */
 }
 
-.App-link {
-  color: #61dafb;
+
+.main-text button {
+  margin-top: 20px;
+  padding: 10px; 
+  border-radius: 12px;
+  border: none;
+  background-color: #F4CE14;
+}
+.main-text {
+  justify-content: space-between;
+  align-items: center;
+  width: 45%; /* Adjust the width of the text content */
+  text-align: left; /* Align text content to the left */
+  padding-right: 0px ; /* Add some spacing between text and image */
+  font-size: 20px; /* Adjust the font size as needed */
+  margin: 0; /* Remove any default margin */
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-image{
+  width: 35%; /* Adjust the width of the image */
+}
+
+.main-image img{
+  width: 40%; /* Adjust the width of the image */
+  border-radius: 16px;
+}
+
+
+/* Styling the nav part */
+
+.image-container { 
+  display: flex;
+}
+.image-item img{
+  width: 100%;
+  border-radius: 15px;
+}
+
+.image-item {
+  border: solid black;
+  background-color: rgb(224, 224, 224);
+  border-radius: 16px;
+  margin: 20px;
+}
+
+.nav {
+  grid-area: nav;
+  /* padding: 25px; */
+  background-color: darkcyan;
+  text-align: center;
+}
+.specials-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.specials-container h2{
+  color: #EDEFEE;
+  margin-left: 25%;
+}
+/* Styling the button */
+.specials-container button{
+  width: 10%;
+  height: 20%;
+  margin: 10px;
+  padding: 10px; 
+  border-radius: 12px;
+  border: none;
+  background-color: #F4CE14;
+}
+
+.footer ul{
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+.footer{
+  display: flex;
+  align-items: center;
 }
