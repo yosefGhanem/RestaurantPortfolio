@@ -16,11 +16,8 @@
   }
 }
 
-ul{
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+
+
 
 ul li {
   /* Adjusting the header */
@@ -28,14 +25,22 @@ ul li {
   display: inline-block;
   margin-right: 25px;
 }
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
 .header {
+  text-decoration: none;
+  list-style-type: none;
   display: flex;
   grid-area: header;
   flex-direction: row; /* Stack the logo and menu items horizontally */
   align-items: center; /* Center the content horizontally */
   justify-content: center; /* Center the content vertically */
   padding: 10px;
-  background-color: #EDEFEE;
+  background-color: white;
   color: black;
 }
 
@@ -47,14 +52,24 @@ ul li {
   grid-area: main;
   padding: 25px;
   text-align: center;
+  background-color: #495E57;
+  font-weight: bold;
+}
+.main h1 {
+  color: #F4CE14;
+}
+
+.main h2, .main article {
+  color: white;
 }
 
 .footer {
 
   grid-area: footer;
   padding: 10px;
-  background-color: black;
-  color: #fff;
+  background-color: #ffefa0;
+  color: #495E57;
+  font-weight: bold;
   text-align: center;
 }
 
@@ -66,14 +81,15 @@ ul li {
   justify-content: end; /* Add space between image and text */
 }
 
-
-.main-text button {
+.main-btn {
   margin-top: 20px;
   padding: 10px; 
   border-radius: 12px;
   border: none;
+  cursor: pointer;
   background-color: #F4CE14;
 }
+
 .main-text {
   justify-content: space-between;
   align-items: center;
@@ -99,6 +115,13 @@ ul li {
 
 .image-container { 
   display: flex;
+  width: 80%;
+  /* center the container horizontally */
+  margin: 0 auto;
+  align-items: center;
+  line-height: 1;
+  background-color: white;
+  
 }
 .image-item img{
   width: 100%;
@@ -106,37 +129,76 @@ ul li {
 }
 
 .image-item {
-  border: solid black;
-  background-color: rgb(224, 224, 224);
+  width: 40%;
+  /* border: solid black; */
+
+  background-color:#EEEEEE;
   border-radius: 16px;
   margin: 20px;
+  flex-wrap: wrap;
+  
+}
+.price{ 
+  margin-left:40%;
+}
+/* positioning description */
+.image-item p{
+  flex-wrap: wrap;
+  margin-right: 40%;
+  margin-bottom: 30%;
+  
+}
+
+.price-delivery{
+  margin-left: 50%;
 }
 
 .nav {
   grid-area: nav;
   /* padding: 25px; */
-  background-color: darkcyan;
+  background-color: white;
+  /* recipe font color */
+  color: black;
   text-align: center;
-}
-.specials-container{
-  display: flex;
-  justify-content: space-around;
+
 }
 
-.specials-container h2{
-  color: #EDEFEE;
-  margin-left: 25%;
+.specials-container {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* Add any other styles for the container here */
+  font-size: 16px;
 }
+
 /* Styling the button */
-.specials-container button{
+.button {
+  padding: 10px 20px;
+  background-color: #F4CE14;
+  color: black;
+  border: none;
+  cursor: pointer;
+  /* Add extra styles for the button */
   width: 10%;
   height: 20%;
   margin: 10px;
   padding: 10px; 
   border-radius: 12px;
   border: none;
-  background-color: #F4CE14;
 }
+
+.price {
+  color: #EE9972; /* Set the text color to EE9972 */
+} 
+
+
+.specials-container h2{
+  color: black;
+  margin-left: 25%;
+  font-size: 18pt;
+}
+
 
 .footer ul{
   display: flex;
