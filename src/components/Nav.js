@@ -4,6 +4,7 @@ import bruchetta from "../assets/bruchetta.jpg"
 import lemonDessert from "../assets/lemon dessert.jpg"
 
 // Chnages sizes of three images to 133
+// svg does not need to be resized
 
 function  Nav() {
   return (
@@ -18,21 +19,27 @@ function  Nav() {
         <img src={greekSalad} alt="Greek Salad" />
         <h3><strong>Greek Salad</strong> <span className='price'>$10</span></h3>
         <p>Salad Description</p>
+        <div className = "delivery">
         <b>Order delivery</b><span className='price-delivery'> 🚲</span>
+        </div>
       </div>
 
       <div className='image-item'>
         <img src={bruchetta} alt="Bruchetta" />
         <h3><strong>Bruchetta</strong> <span className='price'>$12</span></h3>
         <p>bruchetta description</p>
+        <div className = "delivery">
         <b>Order delivery</b><span className='price-delivery'> 🚲</span>
+        </div>
       </div>
 
       <div className='image-item'>
         <img src={lemonDessert} alt="Lemon Dessert" />
         <h3><strong>Lemon Dessert</strong> <span className='price'>$8</span></h3>
         <p>🍋 dessert description</p>
+        <div className = "delivery">
         <b>Order delivery</b><span className='price-delivery'> 🚲</span>
+        </div>
       </div> 
     </div>
     </nav>

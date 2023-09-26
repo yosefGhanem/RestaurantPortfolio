@@ -5,6 +5,7 @@
   grid-template-columns: 100%;
   grid-template-rows: auto auto auto auto;
   grid-template-areas: "header" "main" "nav" "footer";
+  min-width: 400px;
 }
 
 
@@ -125,7 +126,9 @@ ul li {
 }
 .image-item img{
   width: 100%;
-  border-radius: 15px;
+  /* rem unit can be viewed on 
+  different viewport sizes */
+  border-radius: 1rem;
 }
 
 .image-item {
@@ -133,10 +136,9 @@ ul li {
   /* border: solid black; */
 
   background-color:#EEEEEE;
-  border-radius: 16px;
-  margin: 20px;
+  border-radius: 1rem;
+  margin: 1.25rem;
   flex-wrap: wrap;
-  
 }
 .price{ 
   margin-left:40%;
@@ -147,6 +149,9 @@ ul li {
   margin-right: 40%;
   margin-bottom: 30%;
   
+}
+.delivery {
+  margin-bottom: 8px;
 }
 
 .price-delivery{
@@ -174,7 +179,7 @@ ul li {
 
 /* Styling the button */
 .button {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   background-color: #F4CE14;
   color: black;
   border: none;

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../assets/Logo.png"
+import logo from "../assets/Logo.svg"
 import {Routes, Route, Link} from 'react-router-dom';
 // Header components
 import Homepage from "../header-comps/homepage";
@@ -8,31 +8,31 @@ import Login from "../header-comps/login";
 import Menu from "../header-comps/menu";
 import OrderOnline from "../header-comps/order-online";
 import Reservations from "../header-comps/reservations";
-
+// Route should not include.js
 
 function Header() {
   return (
-    <div>
-    <header className='header'>
-      <img src={logo} alt="Little Lemon Logo" />
-      <ul>
-          <li><Link to="../header-comps/homepage.js" className='link'>Home</Link></li>
-          <li><Link to="../header-comps/about.js" className='link'>about</Link></li>
-          <li><Link to="../header-comps/menu.js" className='link'>Menu</Link></li>
-          <li><Link to="../header-comps/reservations.js" className='link'>Reservations</Link></li>
-          <li><Link to="../header-comps/order-online.js" className='link'>Order online</Link></li>
-          <li><Link to="../header-comps/login.js" className='link'>Login</Link></li>
+    <>
+      <header className='header'>
+        <img src={logo} alt="Little Lemon Logo" />
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/menu">Menu</Link></li>
+          <li><Link to="/reservations">Reservations</Link></li>
+          <li><Link to="/order-online">Order online</Link></li>
+          <li><Link to="/login">Login</Link></li>
         </ul>
-    </header>
-    <Routes>
-      <Route path='../header-comps/homepage.js' element={<Homepage />}></Route>
-      <Route path='../header-comps/about.js' element={<About />}></Route>
-      <Route path='../header-comps/Login.js' element={<Login />}></Route>
-      <Route path='../header-comps/Menu.js' element={<Menu />}></Route>
-      <Route path='../header-comps/OrderOnline.js' element={<OrderOnline />}></Route>
-      <Route path='../header-comps/Reservations.js' element={<Reservations />}></Route>
-    </Routes>
-    </div>
+      </header>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/reservations" element={<Reservations />} />
+        <Route path="/order-online" element={<OrderOnline />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </>
   );
 }
 
