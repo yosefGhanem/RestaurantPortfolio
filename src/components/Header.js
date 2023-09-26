@@ -8,7 +8,7 @@ import Login from "../header-comps/login";
 import Menu from "../header-comps/menu";
 import OrderOnline from "../header-comps/order-online";
 import Reservations from "../header-comps/reservations";
-// Route should not include.js
+// Route should not include.j
 
 function Header() {
   return (

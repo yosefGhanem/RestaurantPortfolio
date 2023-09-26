@@ -7,20 +7,20 @@ import Footer from "./components/Footer.js"
 
 function App() {
   return (
-      <div className = "container">
-      <header class="header">
-      <Header></Header>
+    <div className="container">
+      <header className="header"> 
+        <Header></Header>
       </header>
       <main>
         <Main></Main>
       </main>
-      <div class="nav">
+      <div className="nav">
         <Nav></Nav>
       </div>
-      <footer class="footer">
+      <footer className="footer">
         <Footer></Footer>
       </footer>
-      </div>
+    </div>
   );
 }
 

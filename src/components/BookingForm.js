@@ -57,26 +57,24 @@ function BookingForm({ dispatchTimes }) {
 
   return (
     <div className="reserve-form">
-      <form style={{ display: 'grid', maxWidth: '200px', gap: '20px' }} onSubmit={handleSubmit}>
-        <fieldset>
-          <label htmlFor="res-date">Choose date</label><br />
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="res-date">Choose date:</label>
           <input
             type="date"
             id="res-date"
             value={selectedDate}
             onChange={(e) => {
               setSelectedDate(e.target.value);
-              
-              // Use the fetchAPI function to fetch available times when the date changes
               const times = fetchAPI(e.target.value);
-              
-              // Update the available times state
               setAvailableTimes(times);
             }}
             aria-labelledby="res-date-label"
           />
-          <label id="res-date-label" htmlFor="res-date">Select a date for your reservation</label><br />
-          <label htmlFor="res-time">Choose time</label><br />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="res-time">Choose time:</label>
           <select id="res-time" value={selectedTime} onChange={handleTimeChange}>
             {availableTimes.map((time, index) => (
               <option key={index} value={time}>
@@ -84,7 +82,10 @@ function BookingForm({ dispatchTimes }) {
               </option>
             ))}
           </select>
-          <label htmlFor="guests">Number of guests</label><br />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="guests">Number of guests:</label>
           <input
             type="number"
             placeholder="1"
@@ -95,17 +96,22 @@ function BookingForm({ dispatchTimes }) {
             onChange={handleGuestsChange}
             aria-labelledby="guests-label"
           />
-          <label id="guests-label" htmlFor="guests">Number of guests (1-10)</label><br />
-          <label htmlFor="occasion">Occasion</label><br />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="occasion">Occasion:</label>
           <select id="occasion" value={selectedOccasion} onChange={handleOccasionChange}>
             <option value="Birthday">Birthday</option>
             <option value="Anniversary">Anniversary</option>
           </select>
-          <input type="submit" value="Make Your reservation" disabled={!numberOfGuests} />
-        </fieldset>
+        </div>
+
+        <div className="form-group">
+          <input type="submit" value="Make Your Reservation" disabled={!numberOfGuests} />
+        </div>
       </form>
     </div>
-  );
+    );
 }
 
 export default BookingForm;

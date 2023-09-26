@@ -1,10 +1,9 @@
 import React, { useReducer, useEffect } from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
 import restaurantFood from '../assets/restauranfood.jpg';
-import BookingForm from './BookingForm'; // Assuming you have a BookingForm component
+import BookingForm from '../components/BookingForm';
 
 function Main() {
-  // Create a function to update available times based on the selected date
   const updateTimes = (selectedDate) => {
     // For now, return the same available times regardless of the date
     return [
@@ -12,19 +11,16 @@ function Main() {
     ];
   };
 
-  // Create a function to initialize the availableTimes state
   const initializeTimes = () => {
     return updateTimes(''); // Initialize with available times for an empty date
   };
 
-  // Change availableTimes to a reducer
   const [availableTimes, dispatchTimes] = useReducer(updateTimes, '', initializeTimes);
 
-  // Update available times when the component mounts
   useEffect(() => {
-    const initialTimes = initializeTimes();
-    dispatchTimes({ type: 'SET_TIMES', times: initialTimes });
-  }, [initializeTimes]); // Include initializeTimes in the dependency array
+    // You can dispatch the initial times directly without calling initializeTimes
+    dispatchTimes({ type: 'SET_TIMES', times: initializeTimes() });
+  }, []); // Use an empty dependency array to run this effect only once
 
   return (
     <main className='main'>
