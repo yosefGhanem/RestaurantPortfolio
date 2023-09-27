@@ -1,8 +1,12 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App'; // Assuming App.js is your main component
-import { initializeTimes, updateTimes } from './BookingForm'; // Import the utility functions
+import { initializeTimes, updateTimes } from './components/BookingForm'; // Import the utility functions
 import Form from './components/BookingForm'; // Import the Form component from BookingForm.js
+// For the new test below
+import { MemoryRouter, Route } from 'react-router-dom';
+import Main from './components/Main';
+import BookingForm from './components/BookingForm'; // Import the BookingForm component
 
 describe('BookingForm Component', () => {
   test('should render without errors', () => {
@@ -67,3 +71,39 @@ describe('BookingForm Utility Functions', () => {
 });
 
 // You can also add more tests for the App component and other components if needed
+// To download Jest
+// Check version jest --versino
+// download npm init -y
+
+// To download Jest
+// Check version jest --versino
+// download npm init -y
+
+//testing reserve a table to show up
+//reserve a table exists in main.js
+
+
+// new test is here
+test('renders a form when clicking on reserve a table button', () => {
+  const handleSubmit = jest.fn()
+  render(
+    <MemoryRouter initialEntries={['/']}> {/* Set the initial route */}
+      <Route path="/" component={() => <Main onSubmit={handleSubmit} />} />
+      <Route path="/booking" component={BookingForm} /> {/* Define the /booking route */}
+    </MemoryRouter>
+  );
+
+  // Check if the "Reserve a table" button is present
+  const buttonElement = screen.getByLabelText('Reserve a table');
+  expect(buttonElement).toBeInTheDocument();
+
+  // Simulate a click on the button to navigate to the BookingForm
+  fireEvent.click(buttonElement);
+
+  // Check if the URL changes to /booking
+  expect(window.location.pathname).toBe('/booking'); // Check the URL
+
+  // Check if the BookingForm is rendered after clicking the button
+  const formElement = screen.getByLabelText('Choose date:');
+  expect(formElement).toBeInTheDocument();
+});

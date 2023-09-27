@@ -69,7 +69,8 @@ function BookingForm({ dispatchTimes }) {
               const times = fetchAPI(e.target.value);
               setAvailableTimes(times);
             }}
-            aria-labelledby="res-date-label"
+            aria-labelledby="res-date-label"//adding aria label for accessibility
+            aria-label="On Click"
           />
         </div>
 
@@ -83,7 +84,7 @@ function BookingForm({ dispatchTimes }) {
             ))}
           </select>
         </div>
-
+        
         <div className="form-group">
           <label htmlFor="guests">Number of guests:</label>
           <input
@@ -94,7 +95,8 @@ function BookingForm({ dispatchTimes }) {
             id="guests"
             value={numberOfGuests}
             onChange={handleGuestsChange}
-            aria-labelledby="guests-label"
+            aria-labelledby="guests-label"//adding aria label for accessibility
+            aria-label="On Click"
           />
         </div>
 
